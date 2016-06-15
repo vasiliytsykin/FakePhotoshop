@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Collections.Generic;
@@ -65,7 +65,7 @@ namespace MyPhotoshop
             filtersSelect.Height = 20;
 
 
-            ClientSize = new Size(filtersSelect.Right + 20, processed.Bottom);
+            ClientSize = new System.Drawing.Size(filtersSelect.Right + 20, processed.Bottom);
 
             apply.Left = ClientSize.Width - 120;
             apply.Top = ClientSize.Height - 50;

@@ -5,10 +5,17 @@ using System.Text;
 
 namespace MyPhotoshop
 {
-    public abstract class PixelFilter<TParam>: ParametrizedFilter<TParam>
+    public class PixelFilter<TParam>: ParametrizedFilter<TParam>
         where TParam : IParameters, new()
-    {       
-        protected abstract Pixel ProcessPixel(Pixel original, TParam parameters);
+    {
+        private readonly string filterName;
+        private readonly Func<Pixel, TParam, Pixel> ProcessPixel;
+
+        public PixelFilter(string filterName, Func<Pixel, TParam, Pixel> processPixel)
+        {
+            this.filterName = filterName;
+            ProcessPixel = processPixel;
+        }
 
         protected override Photo Process(Photo original, TParam parameters)
         {
@@ -25,6 +32,11 @@ namespace MyPhotoshop
                 }
 
             return result;
-        }       
+        }
+
+        public override string ToString()
+        {
+            return filterName;
+        }
     }
 }

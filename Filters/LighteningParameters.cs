@@ -1,4 +1,4 @@
-﻿namespace MyPhotoshop
+﻿ namespace MyPhotoshop
 {
     public class LighteningParameters : IParameters
     {

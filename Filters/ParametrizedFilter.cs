@@ -2,8 +2,7 @@ namespace MyPhotoshop
 {
     public abstract class ParametrizedFilter<TParam> : IFilter
         where TParam : IParameters, new ()
-    {
-        //private readonly TParam parameters = new TParam();       
+    {         
 
         public ParameterInfo[] GetParameters()
         {

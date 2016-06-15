@@ -3,7 +3,8 @@ using System;
 namespace MyPhotoshop
 {
     public class Photo
-    {
+    {       
+
         public Photo(int width, int height)
         {
             Height = height;
